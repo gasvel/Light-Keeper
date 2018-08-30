@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
 
     private Rigidbody2D rigi;
 
+    private Animator anim;
+
     private Vector2 moveDir;
 
     [SerializeField]
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour {
 
 	void Start () {
         rigi = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
 	}
 	
 	void FixedUpdate () {
@@ -43,6 +46,15 @@ public class Player : MonoBehaviour {
 
         //Robotic version
         Vector2 mov = new Vector2(movHor,movVer);
+
+        if((movVer != 0 || movHor != 0) && !anim.GetBool("Boosting"))
+        {
+            anim.SetBool("Boosting", true);
+        }
+        else if (movVer == 0 || movHor == 0 && anim.GetBool("Boosting"))
+        {
+            anim.SetBool("Boosting", false);
+        }
 
         moveDir = mov * movSpeed;
         HandleRotation(movHor, movVer);
@@ -113,7 +125,10 @@ public class Player : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Sun")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

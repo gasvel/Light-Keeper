@@ -16,10 +16,26 @@ public class SpawnPoint : MonoBehaviour {
         StartCoroutine(RandomSpawn());
     }
 
+    public void Respawn()
+    {
+        StartCoroutine(RandomRespawn());
+    }
+
     private IEnumerator RandomSpawn()
     {
-        float secs = UnityEngine.Random.Range(0,2f);
+        float secs = UnityEngine.Random.Range(0,5f);
         yield return new WaitForSeconds(secs);
-        GameObject.Instantiate(enemy, transform.position, new Quaternion(0, 0, 0, 0));
+        Enemy1 enem = GameObject.Instantiate(enemy, transform.position, new Quaternion(0, 0, 0, 0)).GetComponent<Enemy1>();
+        enem.SetSpawnPoint(this);
+        enem.SetSpawnPos(transform.position);
+    }
+
+    private IEnumerator RandomRespawn()
+    {
+        float secs = UnityEngine.Random.Range(2f, 5f);
+        yield return new WaitForSeconds(secs);
+        Enemy1 enem = GameObject.Instantiate(enemy, transform.position, new Quaternion(0, 0, 0, 0)).GetComponent<Enemy1>();
+        enem.SetSpawnPoint(this);
+        enem.SetSpawnPos(transform.position);
     }
 }

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4934401149988928}
   - component: {fileID: 212579039223400040}
   - component: {fileID: 60188772649662760}
+  - component: {fileID: 95553832455266004}
   m_Layer: 0
   m_Name: Jugador1
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_GameObject: {fileID: 1871748323203976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 4934401149988928}
   m_Father: {fileID: 0}
@@ -124,6 +125,24 @@ PolygonCollider2D:
       - {x: 0.32, y: -0.17999999}
       - {x: 0.32, y: 0.089999996}
       - {x: 0.06, y: 0.32}
+--- !u!95 &95553832455266004
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093302184642918}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07db983625da0224fa241fcaaf378fda, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114337183174058540
 MonoBehaviour:
   m_ObjectHideFlags: 1

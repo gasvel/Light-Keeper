@@ -143,8 +143,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  rotSpeed: 200
+  rotSpeed: 350
   shootDelay: 0
+  distance: 6.5
+  attPosReached: 0
+  spawnPos: {x: 0, y: 0, z: 0}
+  attacking: 1
+  retPosReached: 0
+  retiring: 0
+  distanceSP: 0.2
 --- !u!212 &212254551715021658
 SpriteRenderer:
   m_ObjectHideFlags: 1
