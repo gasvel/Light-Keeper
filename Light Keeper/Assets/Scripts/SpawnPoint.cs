@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour {
 
-	// Use this for initialization
+    [SerializeField]
+    private GameObject enemy;
+
+    [SerializeField]
+    private Vector2 objDistance;
+
 	void Start () {
-		
+        Enemy1 enem = enemy.GetComponent<Enemy1>();
+        enem.SetObjDistance(objDistance);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public void Spawn()
+    {
+        GameObject.Instantiate(enemy, transform);
+    }
 }

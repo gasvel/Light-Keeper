@@ -18,8 +18,6 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private int bombs;
 
-    [SerializeField]
-    private GameObject sprite;
 
     [SerializeField]
     private float rotSpeed;
