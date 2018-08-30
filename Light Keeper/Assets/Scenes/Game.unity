@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1038444885832912, guid: c2317b4b9b05663489d3dd7f10b2a222, type: 2}
-  objDistance: {x: 0, y: 0}
+  objDistance: {x: -2, y: 4}
 --- !u!1 &364606136
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1038444885832912, guid: c2317b4b9b05663489d3dd7f10b2a222, type: 2}
-  objDistance: {x: 0, y: 0}
+  objDistance: {x: 2, y: -4}
 --- !u!1 &815544839
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1038444885832912, guid: c2317b4b9b05663489d3dd7f10b2a222, type: 2}
-  objDistance: {x: 0, y: 0}
+  objDistance: {x: 4, y: 2}
 --- !u!1 &839082042
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1038444885832912, guid: c2317b4b9b05663489d3dd7f10b2a222, type: 2}
-  objDistance: {x: 0, y: 0}
+  objDistance: {x: -2, y: -4}
 --- !u!1 &983503197
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1038444885832912, guid: c2317b4b9b05663489d3dd7f10b2a222, type: 2}
-  objDistance: {x: 0, y: 0}
+  objDistance: {x: -4, y: 2}
 --- !u!1 &1003487554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1038444885832912, guid: c2317b4b9b05663489d3dd7f10b2a222, type: 2}
-  objDistance: {x: 0, y: 0}
+  objDistance: {x: 4, y: -2}
 --- !u!1 &1498470445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1038444885832912, guid: c2317b4b9b05663489d3dd7f10b2a222, type: 2}
-  objDistance: {x: 0, y: 0}
+  objDistance: {x: -4, y: -2}
 --- !u!1 &1697791068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1038444885832912, guid: c2317b4b9b05663489d3dd7f10b2a222, type: 2}
-  objDistance: {x: 0, y: 0}
+  objDistance: {x: 2, y: 4}
 --- !u!1 &2049149897
 GameObject:
   m_ObjectHideFlags: 0

@@ -142,10 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6fd6dea8602304889a89cea431f983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 3
   rotSpeed: 200
   shootDelay: 0
-  objDistance: {x: -4, y: -2}
 --- !u!212 &212254551715021658
 SpriteRenderer:
   m_ObjectHideFlags: 1

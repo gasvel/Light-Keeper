@@ -19,20 +19,19 @@ public class Enemy1 : MonoBehaviour {
     private float shootDelay;
 
     [SerializeField]
-    private Vector2 objDistance;
+    private float distance;
 
 	void Start () {
         rigi = GetComponent<Rigidbody2D>();
         sun = GameObject.FindGameObjectWithTag("Sun");
-        Debug.Log((Vector2)sun.transform.position - objDistance);
 	}
 	
 	void Update () {
-        Vector2 direction = ((Vector2)sun.transform.position - objDistance) - rigi.position;
+        Vector2 direction = ((Vector2)sun.transform.position) - rigi.position;
         direction.Normalize();
         float rotateAmount = Vector3.Cross(direction, transform.up).z;
         rigi.angularVelocity = -rotateAmount * rotSpeed;
-        if (Vector3.Distance(transform.position, (Vector2)sun.transform.position - objDistance) > 0.5f )
+        if (Vector3.Distance(transform.position, (Vector2)sun.transform.position ) > distance )
         {
 
             rigi.velocity = transform.up * speed;
@@ -44,8 +43,5 @@ public class Enemy1 : MonoBehaviour {
         
 	}
 
-    public void SetObjDistance(Vector2 dist)
-    {
-        objDistance = dist;
-    }
+
 }
