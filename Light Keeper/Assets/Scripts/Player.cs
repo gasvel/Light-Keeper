@@ -9,6 +9,8 @@ public class Player : MonoBehaviour {
 
     private Animator anim;
 
+    private AudioSource[] audioSrcs;
+
     private Vector2 moveDir;
 
     [SerializeField]
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour {
 	void Start () {
         rigi = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
+        audioSrcs = GetComponents<AudioSource>();
 	}
 	
 	void FixedUpdate () {
@@ -50,10 +53,12 @@ public class Player : MonoBehaviour {
         if((movVer != 0 || movHor != 0) && !anim.GetBool("Boosting"))
         {
             anim.SetBool("Boosting", true);
+            audioSrcs[1].Play();
         }
         else if (movVer == 0 || movHor == 0 && anim.GetBool("Boosting"))
         {
             anim.SetBool("Boosting", false);
+            audioSrcs[1].Stop();
         }
 
         moveDir = mov * movSpeed;
@@ -123,11 +128,19 @@ public class Player : MonoBehaviour {
 
     }
 
+    IEnumerator GameOver()
+    {
+        audioSrcs[0].Play();
+        yield return new WaitForSeconds(2f);
+        Destroy(this.gameObject);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Sun")
         {
-            Destroy(this.gameObject);
+            StartCoroutine(GameOver());
+
         }
     }
 
