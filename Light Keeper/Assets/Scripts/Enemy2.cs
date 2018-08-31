@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,6 +27,9 @@ public class Enemy2 : MonoBehaviour {
 
     [SerializeField]
     private float scorePoints;
+    private bool center = true;
+    private bool right = false;
+    private bool left= false;
 
     void Start () {
         rigi = GetComponent<Rigidbody2D>();
@@ -34,14 +38,67 @@ public class Enemy2 : MonoBehaviour {
         sun = GameObject.FindGameObjectWithTag("Sun");
         game = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
-	
-	
-	void Update () {
-        Vector2 direction = ((Vector2)sun.transform.position) - rigi.position;
-        direction.Normalize();
-        float rotateAmount = Vector3.Cross(direction, transform.up).z;
-        rigi.angularVelocity = -rotateAmount * rotSpeed;
-        rigi.velocity = transform.up * speed;
+
+
+    void Update()
+    {
+        if (center)
+        {
+            float posibility = UnityEngine.Random.Range(0, 100);
+            Vector3 movChange = Vector3.zero;
+
+            if (posibility > 90)
+            {                
+                center = false;
+                right = true;
+                StartCoroutine(ChangeMovement());
+            }
+            else if (posibility < 10)
+            {
+                center = false;
+                left = true;
+                StartCoroutine(ChangeMovement());
+
+            }
+
+            Vector2 direction = ((Vector2)sun.transform.position) - rigi.position;
+            direction.Normalize();
+            float rotateAmount = Vector3.Cross(direction, transform.up ).z;
+            rigi.angularVelocity = -rotateAmount * rotSpeed;
+
+
+            rigi.velocity = transform.up * speed;
+        }
+        else if (right)
+        {
+            Vector2 direction = ((Vector2)sun.transform.position) - rigi.position;
+            direction.Normalize();
+            float rotateAmount = Vector3.Cross(direction, transform.up ).z;
+            rigi.angularVelocity = -rotateAmount * rotSpeed;
+
+
+            rigi.velocity = (transform.up + transform.right) * speed;
+        }
+        else if (left)
+        {
+            Vector2 direction = ((Vector2)sun.transform.position) - rigi.position;
+            direction.Normalize();
+            float rotateAmount = Vector3.Cross(direction, transform.up).z;
+            rigi.angularVelocity = -rotateAmount * rotSpeed;
+
+
+            rigi.velocity = (transform.up - transform.right) * speed;
+        }
+    }
+
+    private IEnumerator ChangeMovement()
+    {
+
+        yield return new WaitForSeconds(2f);
+        center = true;
+        left = false;
+        right = false;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

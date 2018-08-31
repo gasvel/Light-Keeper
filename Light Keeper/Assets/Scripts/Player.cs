@@ -179,7 +179,7 @@ public class Player : MonoBehaviour {
 
     void ShootBomb()
     {
-        if (Input.GetKey(KeyCode.M) && Time.time > nextBombShoot && bombs > 0)
+        if (Input.GetKey(KeyCode.M) && Time.time > nextBombShoot && bombs > 0 && !shieldActive)
         {
             nextBombShoot = Time.time + shootBombDelay;
             Instantiate(bomb, transform.position, transform.rotation);
