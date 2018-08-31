@@ -25,8 +25,15 @@ public class Player : MonoBehaviour {
 
     [SerializeField]
     private float rotSpeed;
+    private float nextShoot = 0;
 
-	void Start () {
+    [SerializeField]
+    private GameObject shoot;
+
+    [SerializeField]
+    private GameObject shield;
+
+    void Start () {
         rigi = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         audioSrcs = GetComponents<AudioSource>();
@@ -50,6 +57,11 @@ public class Player : MonoBehaviour {
 
         //Robotic version
         Vector2 mov = new Vector2(movHor,movVer);
+
+        Shoot();
+
+
+        Shield();
 
         if((movVer != 0 || movHor != 0) && !anim.GetBool("Boosting"))
         {
@@ -121,6 +133,25 @@ public class Player : MonoBehaviour {
 
     void Shoot()
     {
+        if (Input.GetKey(KeyCode.L) && Time.time > nextShoot)
+        {
+            nextShoot = Time.time + shootDelay;
+            Instantiate(shoot, transform.position, transform.rotation);
+
+        }
+    }
+
+    void Shield()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            shield.SetActive(true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.K))
+        {
+            shield.SetActive(false);
+        }
 
     }
 
