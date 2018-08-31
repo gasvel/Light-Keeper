@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Sun
+<<<<<<< HEAD
   - PlayerShoot
+=======
+>>>>>>> c3726efaa1c85e65cd5b0d4e9307dd358474dc68
   - Shield
   layers:
   - Default
