@@ -44,6 +44,7 @@ public class Player : MonoBehaviour {
         float movHor = Input.GetAxisRaw("Horizontal");
         float movVer = Input.GetAxisRaw("Vertical");
 
+       
         //Smooth version
         //Vector2 mov = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
 
