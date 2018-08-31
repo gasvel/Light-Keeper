@@ -56,18 +56,10 @@ public class Sun : MonoBehaviour {
             healthPoints -= collision.gameObject.GetComponent<EnemyShoot>().damage;
         }
 
-<<<<<<< HEAD
-        if (collision.gameObject.tag == "Bomb")
-        {
-            healthPoints += collision.gameObject.GetComponent<Bomb>().heal;
-        }
-
-=======
         if (collision.gameObject.tag == "Bomb" && healthPoints <= 90)
         {
             healthPoints += collision.gameObject.GetComponent<Bomb>().healthPoints;
         }
->>>>>>> d93bb670ede800c8addd58125516fe5b0f964394
     }
 
     public void ApplyDamage(float damage)

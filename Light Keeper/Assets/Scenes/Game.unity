@@ -2132,7 +2132,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 4
+=======
+  m_RootOrder: 3
+>>>>>>> d93bb670ede800c8addd58125516fe5b0f964394
 =======
   m_RootOrder: 3
 >>>>>>> d93bb670ede800c8addd58125516fe5b0f964394
@@ -2515,7 +2519,11 @@ Prefab:
     - target: {fileID: 4445099648543868, guid: 7c9dc416c2be50f4d84b8f57387116cb, type: 2}
       propertyPath: m_RootOrder
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 3
+=======
+      value: 2
+>>>>>>> d93bb670ede800c8addd58125516fe5b0f964394
 =======
       value: 2
 >>>>>>> d93bb670ede800c8addd58125516fe5b0f964394
