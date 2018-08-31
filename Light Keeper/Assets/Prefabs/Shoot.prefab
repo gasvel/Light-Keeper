@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  scopeLenght: 2
+  scopeLenght: 0.5
 --- !u!212 &212150552160920706
 SpriteRenderer:
   m_ObjectHideFlags: 1

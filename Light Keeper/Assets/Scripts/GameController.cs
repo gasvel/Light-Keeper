@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour {
 
     private bool started = false;
 
+    public float difficulty = 0;
+
     [SerializeField]
     private GameObject gameOverScreen;
 
@@ -27,9 +29,13 @@ public class GameController : MonoBehaviour {
     [SerializeField]
     private Text scoreUI;
 
-    private List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
+    [SerializeField]
+    private GameObject startText;
 
-	void Start () {
+    private List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
+    private float lapse = 25;
+
+    void Start () {
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Respawn")){
             spawnPoints.Add(g.GetComponent<SpawnPoint>());
         }
@@ -40,8 +46,10 @@ public class GameController : MonoBehaviour {
 
     IEnumerator FirstSpawn()
     {
-        
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
+        startText.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        startText.SetActive(false);
         started = true;
         foreach(SpawnPoint s in spawnPoints)
         {
@@ -79,6 +87,15 @@ public class GameController : MonoBehaviour {
             timeUI.text += "." + (timeSurvived % 60).ToString("f2");
 
             scoreUI.text = score + "";
+
+            if ((timeSurvived % 60) > lapse)
+            {
+                difficulty += 1;
+                if (lapse < 60)
+                {
+                    lapse += 3;
+                }
+            }
         }
 
 	}

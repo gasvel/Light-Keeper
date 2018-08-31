@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6fd6dea8602304889a89cea431f983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoot: {fileID: 1760157354793038, guid: e0639d3646b676f40a6cc32aed24713c, type: 2}
   speed: 3
   rotSpeed: 350
   shootDelay: 0

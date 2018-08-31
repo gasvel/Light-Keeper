@@ -9,6 +9,8 @@ TagManager:
   - Shield
   - PlayerShoot
   - Wall
+  - Bomb
+  - EnemyShoot
   layers:
   - Default
   - TransparentFX

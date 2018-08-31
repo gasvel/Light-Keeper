@@ -10,6 +10,9 @@ public class Enemy1 : MonoBehaviour {
 
     private GameObject sun;
 
+    [SerializeField]
+    private GameObject shoot;
+
     private SpawnPoint spPoint;
 
     private Animator anim;
@@ -70,6 +73,11 @@ public class Enemy1 : MonoBehaviour {
         attacking = true;
     }
 
+    void Shoot()
+    {
+        Instantiate(shoot, transform.position, transform.rotation);
+    }
+
     internal void SetSpawnPos(Vector3 position)
     {
         spawnPos = position;
@@ -83,6 +91,7 @@ public class Enemy1 : MonoBehaviour {
          }
         else if (attPosReached && attacking)
         {
+            Shoot();
             attacking = false;
             attPosReached = false;
             StartCoroutine(ChangeToRetire());
@@ -143,6 +152,7 @@ public class Enemy1 : MonoBehaviour {
 
     private IEnumerator Explode()
     {
+        attacking = false; retiring = false;
         GetComponentInChildren<PolygonCollider2D>().enabled = false;
         rigi.velocity = Vector2.zero;
         anim.SetTrigger("Explode");

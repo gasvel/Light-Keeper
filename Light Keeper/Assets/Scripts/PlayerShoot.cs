@@ -30,5 +30,20 @@ public class PlayerShoot : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
+<<<<<<< HEAD
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(this.gameObject);
+    }
+=======
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+>>>>>>> d93bb670ede800c8addd58125516fe5b0f964394
 
 }
