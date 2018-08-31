@@ -1125,53 +1125,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &1025412938
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4987712104621130, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987712104621130, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987712104621130, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987712104621130, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987712104621130, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987712104621130, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987712104621130, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987712104621130, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114538609898554976, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d,
-        type: 2}
-      propertyPath: rotSpeed
-      value: 0.8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1044167670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,6 +1539,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1038444885832912, guid: c2317b4b9b05663489d3dd7f10b2a222, type: 2}
+--- !u!1001 &1635794182
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4541733836854618, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541733836854618, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541733836854618, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541733836854618, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541733836854618, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541733836854618, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541733836854618, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541733836854618, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1697791068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,7 +1840,7 @@ GameObject:
   - component: {fileID: 1991753939}
   - component: {fileID: 1991753938}
   - component: {fileID: 1991753937}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Walls
   m_TagString: Wall
   m_Icon: {fileID: 0}
