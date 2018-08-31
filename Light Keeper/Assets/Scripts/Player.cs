@@ -22,19 +22,11 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private int bombs;
 
-    [SerializeField]
-    private GameObject shoot;
-
 
     [SerializeField]
     private float rotSpeed;
 
-    [SerializeField]
-    private GameObject shield;
-
-    private float nextFire = 0;
-
-    void Start () {
+	void Start () {
         rigi = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         audioSrcs = GetComponents<AudioSource>();
@@ -58,18 +50,6 @@ public class Player : MonoBehaviour {
 
         //Robotic version
         Vector2 mov = new Vector2(movHor,movVer);
-
-        Shoot();
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            shield.SetActive(true);
-        }
-
-        if (Input.GetKeyUp(KeyCode.K))
-        {
-            shield.SetActive(false);
-        }
 
         if((movVer != 0 || movHor != 0) && !anim.GetBool("Boosting"))
         {
@@ -141,11 +121,7 @@ public class Player : MonoBehaviour {
 
     void Shoot()
     {
-        if (Input.GetKey(KeyCode.L) && Time.time > nextFire)
-        {
-            nextFire = Time.time + shootDelay;
-            Instantiate(shoot, transform.position, transform.rotation);
-        }
+
     }
 
     void ShootBomb()
@@ -155,7 +131,6 @@ public class Player : MonoBehaviour {
 
     IEnumerator GameOver()
     {
-        anim.SetTrigger("GameOver");
         audioSrcs[0].Play();
         yield return new WaitForSeconds(2f);
         Destroy(this.gameObject);

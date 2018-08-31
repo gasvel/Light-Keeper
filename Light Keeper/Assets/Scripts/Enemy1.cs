@@ -124,7 +124,7 @@ public class Enemy1 : MonoBehaviour {
         if(collision.gameObject.tag == "PlayerShoot")
         {
             spPoint.Respawn();
-            Destroy(this.gameObject);
+            Destroy(this);
         }
     }
 

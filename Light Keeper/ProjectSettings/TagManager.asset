@@ -7,10 +7,13 @@ TagManager:
   - Enemy
   - Sun
 <<<<<<< HEAD
+<<<<<<< HEAD
   - PlayerShoot
 =======
 >>>>>>> c3726efaa1c85e65cd5b0d4e9307dd358474dc68
   - Shield
+=======
+>>>>>>> parent of 421c13a... Player shooting
   layers:
   - Default
   - TransparentFX

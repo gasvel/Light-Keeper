@@ -999,7 +999,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1003487555}
   - component: {fileID: 1003487556}
-  - component: {fileID: 1003487557}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1033,6 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeUI: {fileID: 527305539}
   scoreUI: {fileID: 1049606304}
+<<<<<<< HEAD
 --- !u!82 &1003487557
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1134,6 +1134,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+>>>>>>> parent of 421c13a... Player shooting
 --- !u!1001 &1025412938
 Prefab:
   m_ObjectHideFlags: 0
@@ -1441,7 +1443,10 @@ CanvasRenderer:
   m_GameObject: {fileID: 1372882957}
   m_CullTransparentMesh: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 421c13a... Player shooting
 --- !u!1 &1424512498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1871748323203976, guid: 7c9dc416c2be50f4d84b8f57387116cb,
