@@ -8,6 +8,7 @@ TagManager:
   - Sun
   - Shield
   - PlayerShoot
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Wall
   - 
   - 
   - 

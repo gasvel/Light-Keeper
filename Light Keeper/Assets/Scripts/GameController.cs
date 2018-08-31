@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 public class GameController : MonoBehaviour {
 
@@ -9,7 +11,15 @@ public class GameController : MonoBehaviour {
 
     private float timeSurvived = 0.0f;
 
-    private int score = 0;
+    private float score = 0;
+
+    private bool started = false;
+
+    [SerializeField]
+    private GameObject gameOverScreen;
+
+    [SerializeField]
+    private Text survivedTimeUI;
 
     [SerializeField]
     private Text timeUI;
@@ -32,20 +42,49 @@ public class GameController : MonoBehaviour {
     {
         
         yield return new WaitForSeconds(3f);
+        started = true;
         foreach(SpawnPoint s in spawnPoints)
         {
             s.Spawn();
         }
 
     }
+
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GameOver()
+    {
+        started = false;
+        survivedTimeUI.text = ((int)timeSurvived / 60).ToString();
+        survivedTimeUI.text += "." + (timeSurvived % 60).ToString("f2");
+        Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
+
+
+    }
 	
 	void Update () {
-        timeSurvived += Time.deltaTime;
+        if (started)
+        {
+            timeSurvived += Time.deltaTime;
 
 
-        scoreUI.text = score + "";
+            scoreUI.text = score + "";
 
-        timeUI.text =  ((int) timeSurvived / 60) .ToString();
-        timeUI.text += "." + (timeSurvived % 60).ToString("f2");
+            timeUI.text = ((int)timeSurvived / 60).ToString();
+            timeUI.text += "." + (timeSurvived % 60).ToString("f2");
+
+            scoreUI.text = score + "";
+        }
+
 	}
+
+    public void AddScore(float scorePoints)
+    {
+        score += scorePoints;
+    }
 }

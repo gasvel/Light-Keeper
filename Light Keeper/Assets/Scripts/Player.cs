@@ -13,6 +13,12 @@ public class Player : MonoBehaviour {
 
     private Vector2 moveDir;
 
+    private GameController game;
+
+    private bool shieldActive = false;
+    private bool rigiActive = true;
+
+
     [SerializeField]
     private float movSpeed;
 
@@ -37,14 +43,19 @@ public class Player : MonoBehaviour {
         rigi = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         audioSrcs = GetComponents<AudioSource>();
+        game = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 	}
 	
 	void FixedUpdate () {
         Vector2 newPos = rigi.position + moveDir * Time.fixedDeltaTime;
-        rigi.MovePosition(newPos);
+        if (rigiActive)
+        {
+            rigi.MovePosition(newPos);
+
+        }
 
 
-	}
+    }
 
     private void Update()
     {
@@ -133,7 +144,7 @@ public class Player : MonoBehaviour {
 
     void Shoot()
     {
-        if (Input.GetKey(KeyCode.L) && Time.time > nextShoot)
+        if (Input.GetKey(KeyCode.L) && Time.time > nextShoot && !shieldActive)
         {
             nextShoot = Time.time + shootDelay;
             Instantiate(shoot, transform.position, transform.rotation);
@@ -145,11 +156,13 @@ public class Player : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
+            shieldActive = true;
             shield.SetActive(true);
         }
 
         if (Input.GetKeyUp(KeyCode.K))
         {
+            shieldActive = false;
             shield.SetActive(false);
         }
 
@@ -162,8 +175,11 @@ public class Player : MonoBehaviour {
 
     IEnumerator GameOver()
     {
+        rigiActive = false ;
         audioSrcs[0].Play();
+        anim.SetTrigger("GameOver");
         yield return new WaitForSeconds(2f);
+        game.GameOver();
         Destroy(this.gameObject);
     }
 
