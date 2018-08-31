@@ -20,15 +20,22 @@ public class Player : MonoBehaviour {
     private float shootDelay;
 
     [SerializeField]
+    private float shootBombDelay;
+
+    [SerializeField]
     private int bombs;
 
 
     [SerializeField]
     private float rotSpeed;
     private float nextShoot = 0;
+    private float nextBombShoot = 0;
 
     [SerializeField]
     private GameObject shoot;
+
+    [SerializeField]
+    private GameObject bomb;
 
     [SerializeField]
     private GameObject shield;
@@ -57,6 +64,8 @@ public class Player : MonoBehaviour {
 
         //Robotic version
         Vector2 mov = new Vector2(movHor,movVer);
+
+        ShootBomb();
 
         Shoot();
 
@@ -157,7 +166,12 @@ public class Player : MonoBehaviour {
 
     void ShootBomb()
     {
-
+        if (Input.GetKey(KeyCode.M) && Time.time > nextBombShoot && bombs > 0)
+        {
+            nextBombShoot = Time.time + shootBombDelay;
+            Instantiate(bomb, transform.position, transform.rotation);
+            bombs -= 1;
+        }
     }
 
     IEnumerator GameOver()

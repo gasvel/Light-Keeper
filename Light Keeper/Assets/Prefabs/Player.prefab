@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95553832455266004}
   m_Layer: 0
   m_Name: Jugador1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -394,9 +394,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movSpeed: 6
   shootDelay: 0.5
-  bombs: 0
+  shootBombDelay: 1
+  bombs: 4
   rotSpeed: 80
   shoot: {fileID: 1180906824387758, guid: 4d5248fe00aaaf04ea86bbb2cf802b2f, type: 2}
+  bomb: {fileID: 1240307102085668, guid: b342da846d394324c880ea50fa929a74, type: 2}
   shield: {fileID: 1408967811478852}
 --- !u!212 &212579039223400040
 SpriteRenderer:
