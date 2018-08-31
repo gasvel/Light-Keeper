@@ -143,6 +143,7 @@ public class Enemy1 : MonoBehaviour {
 
     private IEnumerator Explode()
     {
+        attacking = false; retiring = false;
         GetComponentInChildren<PolygonCollider2D>().enabled = false;
         rigi.velocity = Vector2.zero;
         anim.SetTrigger("Explode");

@@ -123,6 +123,7 @@ public class Enemy2 : MonoBehaviour {
 
     private IEnumerator Explode()
     {
+        center = false; right = false; left = false;
         GetComponentInChildren<PolygonCollider2D>().enabled = false;
         rigi.velocity = Vector2.zero;
         anim.SetTrigger("Explode");

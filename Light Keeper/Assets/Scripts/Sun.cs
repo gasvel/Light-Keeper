@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Sun : MonoBehaviour {
 
@@ -22,12 +23,17 @@ public class Sun : MonoBehaviour {
     [SerializeField]
     private Sprite sun_25;
 
+    [SerializeField]
+    private Slider healthBar;
+
     void Start () {
         spriteRend = GetComponent<SpriteRenderer>();
 	}
 
     void Update() {
         transform.Rotate(new Vector3(0, 0, rotSpeed));
+
+        healthBar.value = healthPoints;
 
         if (50 <healthPoints && healthPoints < 75 && spriteRend.sprite != sun_75)
         {
@@ -50,7 +56,7 @@ public class Sun : MonoBehaviour {
             healthPoints -= collision.gameObject.GetComponent<EnemyShoot>().damage;
         }
 
-        if (collision.gameObject.tag == "Bomb")
+        if (collision.gameObject.tag == "Bomb" && healthPoints <= 90)
         {
             healthPoints += collision.gameObject.GetComponent<Bomb>().healthPoints;
         }
