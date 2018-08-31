@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4987712104621130}
+  - component: {fileID: 114538609898554976}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Sun
@@ -64,7 +65,7 @@ Transform:
   m_GameObject: {fileID: 1280007844182342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 4521648171355622}
   m_Father: {fileID: 0}
@@ -140,6 +141,22 @@ PolygonCollider2D:
       - {x: 0.21, y: -0.56}
       - {x: 0.32, y: -0.53}
       - {x: 0.39999998, y: -0.45999998}
+--- !u!114 &114538609898554976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1280007844182342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8deb770eed3ec7498ef2b45770d4f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 100
+  rotSpeed: 0.2
+  sun_75: {fileID: 21300000, guid: 82a017716661bf348869665c2a65581c, type: 3}
+  sun_50: {fileID: 21300000, guid: d7c547ed522fb1148beaf7c3091ab042, type: 3}
+  sun_25: {fileID: 0}
 --- !u!212 &212470420353747118
 SpriteRenderer:
   m_ObjectHideFlags: 1

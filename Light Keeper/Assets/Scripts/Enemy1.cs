@@ -12,6 +12,19 @@ public class Enemy1 : MonoBehaviour {
 
     private SpawnPoint spPoint;
 
+    private Animator anim;
+
+    private AudioSource audioSrc;
+
+    private bool attPosReached = false;
+
+    private Vector3 spawnPos;
+    private bool attacking = true;
+    private bool retPosReached = false;
+    private bool retiring = false;
+
+    private GameController game;
+
     [SerializeField]
     private float speed;
 
@@ -24,19 +37,18 @@ public class Enemy1 : MonoBehaviour {
     [SerializeField]
     private float distance;
 
-    public bool attPosReached = false;
-
-    public Vector3 spawnPos;
-    public bool attacking = true;
-    public bool retPosReached = false;
-    public bool retiring = false;
+    [SerializeField]
+    private float scorePoints;
 
     [SerializeField]
     private float distanceSP;
 
     void Start () {
         rigi = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
+        audioSrc = GetComponent<AudioSource>();
         sun = GameObject.FindGameObjectWithTag("Sun");
+        game = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
 	}
 
@@ -123,10 +135,24 @@ public class Enemy1 : MonoBehaviour {
     {
         if(collision.gameObject.tag == "PlayerShoot")
         {
-            spPoint.Respawn();
-            Destroy(this.gameObject);
+            game.AddScore(scorePoints);
+            StartCoroutine(Explode());
+
         }
     }
+
+    private IEnumerator Explode()
+    {
+        GetComponentInChildren<PolygonCollider2D>().enabled = false;
+        rigi.velocity = Vector2.zero;
+        anim.SetTrigger("Explode");
+        audioSrc.Play();
+        yield return new WaitForSeconds(0.8f);
+        spPoint.Respawn();
+        Destroy(this.gameObject);
+    }
+
+
 
 
 }
