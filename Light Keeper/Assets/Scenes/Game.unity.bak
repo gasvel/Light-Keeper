@@ -1172,6 +1172,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+<<<<<<< HEAD
+=======
 --- !u!1001 &1025412938
 Prefab:
   m_ObjectHideFlags: 0
@@ -1219,6 +1221,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a2e98a90ee1dc1448ce4f992dd7f01d, type: 2}
   m_IsPrefabAsset: 0
+>>>>>>> 1d6d047c8d67099da264d5e0ef36ce28c46e527f
 --- !u!1 &1044167670
 GameObject:
   m_ObjectHideFlags: 0
