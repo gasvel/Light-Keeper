@@ -1282,6 +1282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97245d912b50da649b9546e04372f422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverTheme: {fileID: 8300000, guid: 0e6d990158606ca43ad7fedd58824c85, type: 3}
   difficulty: 0
   gameOverScreen: {fileID: 1044167670}
   survivedTimeUI: {fileID: 674046179}

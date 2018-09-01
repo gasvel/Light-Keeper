@@ -9,6 +9,11 @@ public class GameController : MonoBehaviour {
 
     private GameObject sun;
 
+    [SerializeField]
+    private AudioClip gameOverTheme;
+
+    private AudioSource audioSrc;
+
     private float timeSurvived = 0.0f;
 
     private float score = 0;
@@ -36,6 +41,7 @@ public class GameController : MonoBehaviour {
     private float lapse = 25;
 
     void Start () {
+        audioSrc = GetComponent<AudioSource>();
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Respawn")){
             spawnPoints.Add(g.GetComponent<SpawnPoint>());
         }
@@ -66,6 +72,8 @@ public class GameController : MonoBehaviour {
 
     public void GameOver()
     {
+        audioSrc.clip = gameOverTheme;
+        audioSrc.Play();
         started = false;
         survivedTimeUI.text = ((int)timeSurvived / 60).ToString();
         survivedTimeUI.text += "." + (timeSurvived % 60).ToString("f2");
