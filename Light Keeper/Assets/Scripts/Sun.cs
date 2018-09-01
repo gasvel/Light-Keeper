@@ -8,6 +8,8 @@ public class Sun : MonoBehaviour {
 
     private SpriteRenderer spriteRend;
 
+    private GameController game;
+
     [SerializeField]
     private float healthPoints;
 
@@ -28,10 +30,15 @@ public class Sun : MonoBehaviour {
 
     void Start () {
         spriteRend = GetComponent<SpriteRenderer>();
+        game = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 	}
 
     void Update() {
         transform.Rotate(new Vector3(0, 0, rotSpeed));
+        if(healthPoints <= 0)
+        {
+            game.GameOver();
+        }
 
         healthBar.value = healthPoints;
 

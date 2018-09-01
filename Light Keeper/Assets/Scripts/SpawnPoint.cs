@@ -11,8 +11,8 @@ public class SpawnPoint : MonoBehaviour {
     private float minRange = 0.8f;
     private float maxRange = 2f;
 
-    private float minRespawnT = 2.5f;
-    private float maxRespawnT = 5f;
+    private float minRespawnT = 4.5f;
+    private float maxRespawnT = 6.5f;
 
     private float difficulty = 1;
 

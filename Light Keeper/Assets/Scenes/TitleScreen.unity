@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 670777513}
   - component: {fileID: 670777515}
   - component: {fileID: 670777514}
+  - component: {fileID: 670777516}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -259,6 +260,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 670777512}
   m_CullTransparentMesh: 0
+--- !u!95 &670777516
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670777512}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed27216a12f70a142adfa63195b5fdd7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &807913315
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1288167038}
   - component: {fileID: 1288167037}
+  - component: {fileID: 1288167040}
   m_Layer: 0
   m_Name: TitleScreen1
   m_TagString: Untagged
@@ -409,6 +429,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1288167040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288167036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe2730710d25e84cb6241127af35b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  first: {fileID: 21300000, guid: 23d5aaaf82edc704485116f981bc8d84, type: 3}
+  second: {fileID: 21300000, guid: 64ea0c742e8937b4e95ad9907b0be9bf, type: 3}
+  third: {fileID: 21300000, guid: 1ab38502c4032e54d85bf506b7440065, type: 3}
 --- !u!1 &1485155739
 GameObject:
   m_ObjectHideFlags: 0

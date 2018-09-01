@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour {
 
-	// Use this for initialization
+    private AudioSource audioSrc;
+
+
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        audioSrc = GetComponent<AudioSource>();
+
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "EnemyShoot")
+        {
+            collision.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            Destroy(collision.gameObject);
+            audioSrc.Play();
+
+        }
+    }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,36 +16,18 @@ public class Player : MonoBehaviour {
 
     private GameController game;
 
-    private bool shieldActive = false;
     private bool rigiActive = true;
 
 
     [SerializeField]
     private float movSpeed;
 
-    [SerializeField]
-    private float shootDelay;
 
-    [SerializeField]
-    private float shootBombDelay;
-
-    [SerializeField]
-    private int bombs;
 
 
     [SerializeField]
     private float rotSpeed;
-    private float nextShoot = 0;
-    private float nextBombShoot = 0;
 
-    [SerializeField]
-    private GameObject shoot;
-
-    [SerializeField]
-    private GameObject bomb;
-
-    [SerializeField]
-    private GameObject shield;
 
     void Start () {
         rigi = GetComponent<Rigidbody2D>();
@@ -52,8 +35,23 @@ public class Player : MonoBehaviour {
         audioSrcs = GetComponents<AudioSource>();
         game = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 	}
-	
-	void FixedUpdate () {
+
+    internal void Die()
+    {
+        StartCoroutine(GameOver());
+    }
+
+    IEnumerator GameOver()
+    {
+        rigiActive = false;
+        audioSrcs[0].Play();
+        anim.SetTrigger("GameOver");
+        yield return new WaitForSeconds(2f);
+        game.GameOver();
+        Destroy(this.gameObject);
+    }
+
+    void FixedUpdate () {
         Vector2 newPos = rigi.position + moveDir * Time.fixedDeltaTime;
         if (rigiActive)
         {
@@ -75,13 +73,6 @@ public class Player : MonoBehaviour {
 
         //Robotic version
         Vector2 mov = new Vector2(movHor,movVer);
-
-        ShootBomb();
-
-        Shoot();
-
-
-        Shield();
 
         if((movVer != 0 || movHor != 0) && !anim.GetBool("Boosting"))
         {
@@ -151,64 +142,9 @@ public class Player : MonoBehaviour {
         
     }
 
-    void Shoot()
-    {
-        if (Input.GetKey(KeyCode.L) && Time.time > nextShoot && !shieldActive)
-        {
-            nextShoot = Time.time + shootDelay;
-            Instantiate(shoot, transform.position, transform.rotation);
 
-        }
-    }
 
-    void Shield()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            shieldActive = true;
-            shield.SetActive(true);
-        }
 
-        if (Input.GetKeyUp(KeyCode.K))
-        {
-            shieldActive = false;
-            shield.SetActive(false);
-        }
 
-    }
-
-    void ShootBomb()
-    {
-        if (Input.GetKey(KeyCode.M) && Time.time > nextBombShoot && bombs > 0 && !shieldActive)
-        {
-            nextBombShoot = Time.time + shootBombDelay;
-            Instantiate(bomb, transform.position, transform.rotation);
-            bombs -= 1;
-        }
-    }
-
-    IEnumerator GameOver()
-    {
-        rigiActive = false ;
-        audioSrcs[0].Play();
-        anim.SetTrigger("GameOver");
-        yield return new WaitForSeconds(2f);
-        game.GameOver();
-        Destroy(this.gameObject);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Sun" || collision.gameObject.tag == "EnemyShoot")
-        {
-            StartCoroutine(GameOver());
-
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
 
 }
