@@ -59,7 +59,9 @@ public class Enemy1 : MonoBehaviour {
     {
         rigi.velocity = Vector2.zero;
         float secs = UnityEngine.Random.Range(2f, 4f);
-        yield return new WaitForSeconds(secs);
+        yield return new WaitForSeconds(secs/2);
+        Shoot();
+        yield return new WaitForSeconds(secs / 2);
         retiring = true;
         
     }

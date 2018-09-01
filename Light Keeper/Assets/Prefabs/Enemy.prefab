@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoot: {fileID: 1760157354793038, guid: e0639d3646b676f40a6cc32aed24713c, type: 2}
-  speed: 3
+  speed: 3.2
   rotSpeed: 350
   shootDelay: 0.5
   distance: 6.5
