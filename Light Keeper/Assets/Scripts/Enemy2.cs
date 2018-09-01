@@ -17,6 +17,12 @@ public class Enemy2 : MonoBehaviour {
     private GameController game;
 
     [SerializeField]
+    private GameObject powerUp;
+
+    [SerializeField]
+    private int powerUpChance;
+
+    [SerializeField]
     private float speed;
 
     [SerializeField]
@@ -123,6 +129,11 @@ public class Enemy2 : MonoBehaviour {
 
     private IEnumerator Explode()
     {
+        int randomInt = UnityEngine.Random.Range(0, 100);
+        if (randomInt <= powerUpChance)
+        {
+            Instantiate(powerUp, transform.position, new Quaternion());
+        }
         center = false; right = false; left = false;
         GetComponentInChildren<PolygonCollider2D>().enabled = false;
         rigi.velocity = Vector2.zero;

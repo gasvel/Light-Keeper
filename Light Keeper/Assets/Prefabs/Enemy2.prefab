@@ -250,6 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c63d084acf47d24087f9123daf53a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUp: {fileID: 1724131112237940, guid: 8cdc325a28b62664bb67e0d46a574b68, type: 2}
+  powerUpChance: 30
   speed: 4
   rotSpeed: 350
   damage: 8

@@ -67,12 +67,13 @@ public class Player : MonoBehaviour {
         float movHor = Input.GetAxisRaw("Horizontal");
         float movVer = Input.GetAxisRaw("Vertical");
 
-       
+
         //Smooth version
         //Vector2 mov = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
 
         //Robotic version
-        Vector2 mov = new Vector2(movHor,movVer);
+        Vector2 mov = new Vector2(movHor, movVer);
+
 
         if((movVer != 0 || movHor != 0) && !anim.GetBool("Boosting"))
         {

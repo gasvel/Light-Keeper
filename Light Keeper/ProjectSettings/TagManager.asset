@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - Bomb
   - EnemyShoot
+  - BombPowerUp
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,12 @@ public class Enemy1 : MonoBehaviour {
     [SerializeField]
     private GameObject shoot;
 
+    [SerializeField]
+    private GameObject powerUp;
+
+    [SerializeField]
+    private int powerUpChance;
+
     private SpawnPoint spPoint;
 
     private Animator anim;
@@ -154,6 +160,11 @@ public class Enemy1 : MonoBehaviour {
 
     private IEnumerator Explode()
     {
+        int randomInt = UnityEngine.Random.Range(0, 100);
+        if(randomInt <= powerUpChance)
+        {
+            Instantiate(powerUp, transform.position, new Quaternion());
+        }
         attacking = false; retiring = false;
         GetComponentInChildren<PolygonCollider2D>().enabled = false;
         rigi.velocity = Vector2.zero;

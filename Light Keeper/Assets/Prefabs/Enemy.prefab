@@ -258,6 +258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoot: {fileID: 1760157354793038, guid: e0639d3646b676f40a6cc32aed24713c, type: 2}
+  powerUp: {fileID: 1724131112237940, guid: 8cdc325a28b62664bb67e0d46a574b68, type: 2}
+  powerUpChance: 15
   speed: 3.2
   rotSpeed: 350
   shootDelay: 0.5

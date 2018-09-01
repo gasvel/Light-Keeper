@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour {
 
@@ -12,6 +13,9 @@ public class PlayerControls : MonoBehaviour {
 
     [SerializeField]
     private int bombs;
+
+    [SerializeField]
+    private Text bombsUI;
 
     private float nextShoot = 0;
     private float nextBombShoot = 0;
@@ -37,6 +41,7 @@ public class PlayerControls : MonoBehaviour {
 
 
     void Update () {
+        bombsUI.text = bombs + "";
         ShootBomb();
 
         Shoot();
@@ -79,6 +84,15 @@ public class PlayerControls : MonoBehaviour {
             nextBombShoot = Time.time + shootBombDelay;
             Instantiate(bomb, transform.position, transform.rotation);
             bombs -= 1;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "BombPowerUp")
+        {
+            bombs += 1;
+            Destroy(collision.gameObject);
         }
     }
 }
