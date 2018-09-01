@@ -41,7 +41,7 @@ public class Bomb : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Sun")
+        if(collision.gameObject.tag == "Sun" || collision.gameObject.tag == "Enemy")
         {
             StartCoroutine(Explode());
         }
