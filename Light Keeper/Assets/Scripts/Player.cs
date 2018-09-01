@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 
     private GameController game;
 
-    private bool rigiActive = true;
+    internal bool rigiActive = true;
 
 
     [SerializeField]

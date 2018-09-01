@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,21 +34,29 @@ public class PlayerControls : MonoBehaviour {
 
     private AudioSource[] audioSrcs;
 
+    [SerializeField]
+    private GameObject arrow;
 
+    private Player player;
 
     void Start () {
         audioSrcs = GetComponents<AudioSource>();
+        player = GetComponent<Player>();
     }
 
 
     void Update () {
         bombsUI.text = bombs + "";
-        ShootBomb();
+        if (player.rigiActive)
+        {
+            ShootBomb();
 
-        Shoot();
+            Shoot();
 
 
-        Shield();
+            Shield();
+        }
+
     }
 
     void Shoot()
@@ -91,8 +100,18 @@ public class PlayerControls : MonoBehaviour {
     {
         if(collision.gameObject.tag == "BombPowerUp")
         {
+            StartCoroutine(BombsUp());
+            audioSrcs[3].Play();
             bombs += 1;
             Destroy(collision.gameObject);
         }
+    }
+
+    private IEnumerator BombsUp()
+    {
+        arrow.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        arrow.SetActive(false);
+
     }
 }

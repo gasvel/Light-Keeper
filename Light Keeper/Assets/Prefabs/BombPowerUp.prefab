@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4148413874662594}
   - component: {fileID: 212444239486825206}
   - component: {fileID: 60538741404105894}
+  - component: {fileID: 95009743755979454}
   m_Layer: 0
   m_Name: BombPowerUp
   m_TagString: BombPowerUp
@@ -35,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1724131112237940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36, y: -0.413, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.541, z: 1}
+  m_LocalPosition: {x: 1.6111677, y: -2.6078236, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,7 +58,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8, y: 1.8}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1.8, y: 1.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -65,27 +66,29 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.29999998, y: 0.19}
-      - {x: 0.24, y: 0.25}
-      - {x: 0.32, y: 0.34}
-      - {x: 0.37, y: 0.45}
-      - {x: 0.37, y: 0.62}
-      - {x: 0.35999998, y: 0.64}
-      - {x: -0.19, y: 0.64}
-      - {x: -0.26999998, y: 0.45}
-      - {x: -0.41, y: 0.12}
-      - {x: -0.41, y: -0.04}
-      - {x: -0.35, y: -0.07}
-      - {x: -0.28, y: -0.13}
-      - {x: -0.35, y: -0.29999998}
-      - {x: -0.39999998, y: -0.48}
-      - {x: -0.39999998, y: -0.63}
-      - {x: -0.38, y: -0.65}
-      - {x: -0.32999998, y: -0.65999997}
-      - {x: -0.22999999, y: -0.65999997}
-      - {x: -0.089999996, y: -0.5}
-      - {x: 0.12, y: -0.24}
-      - {x: 0.31, y: 0.01}
+    - - {x: -0.14, y: 0.21}
+      - {x: -0.16, y: 0.19}
+      - {x: -0.16, y: -0.19999999}
+      - {x: 0.14999999, y: -0.19999999}
+      - {x: 0.14999999, y: 0.21}
+--- !u!95 &95009743755979454
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724131112237940}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ded9e707fc5f05498e33558490205be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &212444239486825206
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -121,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1805593a1154aa64b9898c17a4b00fa0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d36030832b6726c43a8aa9c01faeb5b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

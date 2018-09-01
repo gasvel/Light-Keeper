@@ -31,7 +31,7 @@ public class Enemy1 : MonoBehaviour {
     private bool attacking = true;
     private bool retPosReached = false;
     private bool retiring = false;
-
+    private bool canAttack = true;
     private GameController game;
 
     [SerializeField]
@@ -66,7 +66,10 @@ public class Enemy1 : MonoBehaviour {
         rigi.velocity = Vector2.zero;
         float secs = UnityEngine.Random.Range(2f, 4f);
         yield return new WaitForSeconds(secs/2);
-        Shoot();
+        if (canAttack)
+        {
+            Shoot();
+        }
         yield return new WaitForSeconds(secs / 2);
         retiring = true;
         
@@ -97,7 +100,7 @@ public class Enemy1 : MonoBehaviour {
          {
              AttackMovement();
          }
-        else if (attPosReached && attacking)
+        else if (attPosReached && attacking && canAttack)
         {
             Shoot();
             attacking = false;
@@ -165,7 +168,7 @@ public class Enemy1 : MonoBehaviour {
         {
             Instantiate(powerUp, transform.position, new Quaternion());
         }
-        attacking = false; retiring = false;
+        attacking = false; retiring = false; canAttack = false;
         GetComponentInChildren<PolygonCollider2D>().enabled = false;
         rigi.velocity = Vector2.zero;
         anim.SetTrigger("Explode");
